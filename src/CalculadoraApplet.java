@@ -9,6 +9,5 @@ public class CalculadoraApplet extends JApplet {
         this.setLayout(new BorderLayout());
         add(ventanaCalculadora, BorderLayout.CENTER);
 
-
     }
 }
