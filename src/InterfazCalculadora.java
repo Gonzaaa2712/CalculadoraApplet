@@ -15,6 +15,14 @@ public class InterfazCalculadora extends JPanel{
         addBoton("5");
         addBoton("6");
         addBoton("-");
+        addBoton("1");
+        addBoton("2");
+        addBoton("3");
+        addBoton("*");
+        addBoton("0");
+        addBoton(".");
+        addBoton("/");
+        addBoton("=");
         this.setLayout(new BorderLayout());
         this.add(panelBotones,BorderLayout.CENTER);
 
