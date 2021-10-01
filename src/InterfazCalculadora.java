@@ -7,10 +7,13 @@ public class InterfazCalculadora extends JPanel{
 
     private JPanel panelBotones;
     private Controlador controlador;
+    private JLabel pantalla;
 
     public InterfazCalculadora() {
         controlador = new Controlador();
         panelBotones = new JPanel(new GridLayout(4,4));
+        pantalla = new JLabel("0", JLabel.RIGHT);
+
         addBoton("7");
         addBoton("8");
         addBoton("9");
@@ -29,6 +32,9 @@ public class InterfazCalculadora extends JPanel{
         addBoton("=");
         this.setLayout(new BorderLayout());
         this.add(panelBotones,BorderLayout.CENTER);
+        this.add(pantalla, BorderLayout.NORTH);
+
+
 
 
 
@@ -46,9 +52,9 @@ public class InterfazCalculadora extends JPanel{
         @Override
         public void actionPerformed(ActionEvent e) {
             JButton boton = (JButton) e.getSource();
-            System.out.println("Boton pulsado: " + boton.getText());
+            System.out.println("Boton: " + boton.getText());
+            pantalla.setText(boton.getText());
         }
     }
-
 
 }
