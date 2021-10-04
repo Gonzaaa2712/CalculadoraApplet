@@ -48,11 +48,25 @@ public class InterfazCalculadora extends JPanel{
 
     class Controlador implements ActionListener {
 
+        private int estado;
+        private String operador;
+        static final int ESTADO_INICIAL = 0;
+        static final int LEYENDO_OPERANDO_1 = 1;
+        static final int LEYENDO_OPERANDO_2 = 2;
+        static final int OPERADOR_LEIDO = 3;
+        private String operando1;
+        private String operando2;
+
+        public Controlador() {
+            this.estado = ESTADO_INICIAL;
+            this.operador = "";
+            this.operando1 = null;
+            this.operando2 = null;
+        }
 
         @Override
         public void actionPerformed(ActionEvent e) {
             JButton boton = (JButton) e.getSource();
-            System.out.println("Boton: " + boton.getText());
             pantalla.setText(boton.getText());
         }
     }
