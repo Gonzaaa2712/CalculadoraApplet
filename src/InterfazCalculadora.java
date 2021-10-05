@@ -61,20 +61,25 @@ public class InterfazCalculadora extends JPanel {
             this.operando2 = null;
         }
 
-        private String calcularResultado(String op1, String op2, String operando){
+        private String calcularResultado(String op1, String op2, String operador){
 
             int resultado = 0;
 
-            if(operando.equalsIgnoreCase("+")){
-                resultado = Integer.parseInt(op1) + Integer.parseInt(op2);
-            } else if(operando.equalsIgnoreCase("-")){
-                resultado = Integer.parseInt(op1) - Integer.parseInt(op2);
-            } else if(operando.equalsIgnoreCase("*")){
-                resultado = Integer.parseInt(op1) * Integer.parseInt(op2);
-            } else if(operando.equalsIgnoreCase("/")){
-                resultado = Integer.parseInt(op1) / Integer.parseInt(op2);
-            }
+            switch(operador){
+                case "+":
+                    resultado = Integer.parseInt(op1) + Integer.parseInt(op2);
+                    break;
+                case "-":
+                    resultado = Integer.parseInt(op1) - Integer.parseInt(op2);
+                    break;
+                case "*":
+                    resultado = Integer.parseInt(op1) * Integer.parseInt(op2);
+                    break;
+                case "/":
+                    resultado = Integer.parseInt(op1) / Integer.parseInt(op2);
+                    break;
 
+            }
             return Integer.toString(resultado);
         }
 
